@@ -17,6 +17,4 @@ class EnrollsController < ApplicationController
 		end
 	end
 
-
-
 end

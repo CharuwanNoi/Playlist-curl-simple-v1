@@ -2,11 +2,11 @@ class SongsController < ApplicationController
 
 	skip_before_action :verify_authenticity_token
 
-	def index #get
+	def index #GET
 		render json: Song.all
 	end
 
-	def create #post
+	def create #POST
 		song = Song.new(song_params)
 
 		if song.save
@@ -14,7 +14,7 @@ class SongsController < ApplicationController
 		end
 	end
 
-	def update #put
+	def update #PUT
 		song = Song.find(params[:id])
 
 		if song.update_attributes(song_params)
@@ -22,7 +22,7 @@ class SongsController < ApplicationController
 		end
 	end
 
-	def destroy #delete
+	def destroy #DELETE
 		song = Song.find(params[:id])
 
 		if song.destroy

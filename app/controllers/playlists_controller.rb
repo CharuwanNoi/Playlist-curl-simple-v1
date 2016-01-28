@@ -3,7 +3,7 @@ class PlaylistsController < ApplicationController
 	skip_before_action :verify_authenticity_token
 	
 	def index #GET
-		render json: Playlist.all, :include => [:song]
+		render json: Playlist.all
 	end
 
 	def show
